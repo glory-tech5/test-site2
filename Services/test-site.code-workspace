@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../test-site"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../test_site - Copy (2) - Copy"
+		},
+		{
+			"path": "../../test_siteBuilder"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "test_site"
+	}
+}

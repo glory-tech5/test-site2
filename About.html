@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us</title>
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* ================= STICKY NAVBAR ================= */
+
+.navbar {
+    background: #0a1f44;
+    color: white;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+/* BIG LOGO */
+
+.logo {
+    width: 110px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.logo-text {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition:0.3s;
+}
+
+.nav-link:hover {
+    color: #00d9ff;
+}
+
+/* ================= HERO BANNER ================= */
+
+.banner{
+    position:relative;
+    width:100%;
+    height:650px;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+}
+
+.banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay h1 {
+    color: white;
+    font-size: 55px;
+    text-align: center;
+    padding:20px;
+}
+
+/* ================= SECTIONS ================= */
+
+section:not(.banner){
+    width:90%;
+    max-width:1100px;
+    margin:60px auto;
+}
+
+.about-box,
+.intro-section,
+.about-details,
+.choose-use,
+.map-section{
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+    transition:0.3s ease;
+}
+
+/* ================= TITLES ================= */
+
+.page-title,
+.section-title{
+    color:#0a1f44;
+    margin-bottom:20px;
+}
+
+.section-title{
+    position:relative;
+    padding-bottom:10px;
+}
+
+.section-title::after{
+    content:'';
+    width:70px;
+    height:4px;
+    background:#00bcd4;
+    position:absolute;
+    left:0;
+    bottom:0;
+    border-radius:20px;
+}
+
+/* ================= TEXT ================= */
+
+.para{
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+/* ================= LINKS ================= */
+
+.about-link a{
+    display:block;
+    margin:10px 0;
+    text-decoration:none;
+    color:#0a1f44;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.about-link a:hover{
+    color:#00bcd4;
+}
+
+/* ================= IMAGE ================= */
+
+.campus-img{
+    width:100%;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    transition:0.3s ease;
+}
+
+.campus-img:hover{
+    transform:scale(1.01);
+}
+
+/* ================= WHY US ================= */
+
+.item{
+    list-style:none;
+}
+
+.why-us-item{
+    background:#f5f7fb;
+    padding:18px;
+    margin:12px 0;
+    border-left:5px solid #ec08d9;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.why-us-item:hover{
+    transform:translateX(8px);
+}
+
+/* ================= MAP ================= */
+
+.map-frame{
+    width:100%;
+    height:450px;
+    border-radius:15px;
+    border:0;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    background:#0a1f44;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    margin-top:60px;
+}
+
+.footer h3{
+    margin-bottom:10px;
+    font-size:24px;
+}
+
+.footer p{
+    margin:8px 0;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    .nav-list{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+
+    .overlay h1{
+        font-size:35px;
+    }
+
+    .banner{
+        height:450px;
+    }
+
+    .about-box,
+    .intro-section,
+    .about-details,
+    .choose-use,
+    .map-section{
+        padding:25px;
+    }
+
+    .para{
+        font-size:16px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo-box">
+        <img src="../images/TRANSPARENT.png" class="logo" alt="TechWorld Logo">
+    </div>
+
+    <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="About.html" class="nav-link">About</a></li>
+        <li><a href="Services/services.html" class="nav-link">Services</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="banner">
+
+    <div class="overlay">
+        <h1>WELCOME TO TECH WORLD</h1>
+    </div>
+
+    <img src="../images/banner 3.jpg" alt="TechWorld Banner">
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about-box">
+
+    <h1 class="page-title">About Us</h1>
+
+    <div class="about-link">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="Services/services.html">Services</a>
+    </div>
+
+</section>
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro-section">
+
+    <p class="para">
+        Welcome to TechWorld Academy, where we train students in web development and IT skills.
+    </p>
+
+    <p class="para">
+        We focus on practical training and real-world experience.
+    </p>
+
+</section>
+
+<!-- ================= DETAILS ================= -->
+
+<section class="about-details">
+
+    <h2 class="section-title">About Us</h2>
+
+    <p class="para">
+        We are a professional tech training institute dedicated to building future technology leaders.
+    </p>
+
+    <p class="para">
+        We prepare students for real IT careers through practical and hands-on training.
+    </p>
+
+</section>
+
+<!-- ================= IMAGE ================= -->
+
+<section>
+
+    <img src="../images/computer lap.jpg"
+    class="campus-img"
+    alt="TechWorld Campus">
+
+</section>
+
+<!-- ================= WHY US ================= -->
+
+<section class="choose-use">
+
+    <h2 class="section-title">Why Choose Us?</h2>
+
+    <ul class="item">
+
+        <li class="why-us-item">
+            Practical hands-on training
+        </li>
+
+        <li class="why-us-item">
+            Experienced instructors
+        </li>
+
+        <li class="why-us-item">
+            Modern computer labs
+        </li>
+
+        <li class="why-us-item">
+            Affordable fees
+        </li>
+
+    </ul>
+
+</section>
+
+<!-- ================= MAP ================= -->
+
+<section class="map-section">
+
+    <h2 class="section-title">Our Location</h2>
+
+    <iframe
+    class="map-frame"
+    src="https://www.google.com/maps/embed?pb="
+    loading="lazy">
+    </iframe>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <h3>TechWorld Academy</h3>
+
+    <p>
+        Empowering students with modern technology skills.
+    </p>
+
+    <p>
+        © 2026 All Rights Reserved
+    </p>
+
+</footer>
+
+</body>
+</html>

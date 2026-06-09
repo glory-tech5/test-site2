@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechWorld Academy | Services</title>
+
+   
+
+    <style>
+
+        /* ================= GLOBAL ================= */
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body{
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img{
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ================= NAVBAR ================= */
+
+       .navbar {
+    background: #0a1f44;
+    color: white;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+/* BIG LOGO */
+.logo {
+    width: 110px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.logo-text {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #00d9ff;
+}
+
+        /* ================= HERO SECTION ================= */
+
+        .hero{
+            position: relative;
+            height: 90vh;
+            overflow: hidden;
+        }
+
+        .hero img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .hero-overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            z-index: 2;
+        }
+
+        .hero-content h1{
+            color: white;
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p{
+            color: #ddd;
+            font-size: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .hero-btn{
+            margin-top: 25px;
+            display: inline-block;
+            padding: 14px 35px;
+            background: #0077b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: 0.3s ease;
+            font-weight: bold;
+        }
+
+        .hero-btn:hover{
+            background: #023e8a;
+            transform: translateY(-3px);
+        }
+
+        /* ================= ABOUT SECTION ================= */
+
+        .about{
+            padding: 100px 7%;
+            background: white;
+        }
+
+        .section-title{
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #0d1b2a;
+        }
+
+        .about-text{
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* ================= COURSES ================= */
+
+        .courses{
+            padding: 100px 7%;
+        }
+
+        .course-container{
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .course-card{
+            background: white;
+            width: 30%;
+            min-width: 280px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.4s;
+        }
+
+        .course-card:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .course-card h3{
+            margin-bottom: 20px;
+            color: #0077b6;
+            font-size: 28px;
+        }
+
+        .course-card ul{
+            list-style: square;
+            margin-left: 20px;
+        }
+
+        .course-card li{
+            margin-bottom: 12px;
+        }
+
+        .course-card button{
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background: #0077b6;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .course-card button:hover{
+            background: #023e8a;
+        }
+
+        /* ================= TABLE ================= */
+
+        .schedule{
+            padding: 100px 7%;
+            background: white;
+        }
+
+        .servicesTable{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: white;
+        }
+
+        .servicesTable th,
+        .servicesTable td{
+            padding: 15px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .servicesTable th{
+            background: #0077b6;
+            color: white;
+        }
+
+        .servicesTable tr:hover{
+            background: #f1f1f1;
+        }
+
+        /* ================= MAP ================= */
+
+        .location{
+            padding: 100px 7%;
+        }
+
+        iframe{
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer{
+            background: #0d1b2a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            font-size: 15px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 768px){
+
+            .navbar{
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-list{
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero{
+                height: 70vh;
+            }
+
+            .hero-content h1{
+                font-size: 35px;
+                line-height: 1.2;
+            }
+
+            .hero-content p{
+                font-size: 16px;
+            }
+
+            .section-title{
+                font-size: 30px;
+            }
+
+            .course-container{
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .course-card{
+                width: 90%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo-box">
+            <img src="../images/TRANSPARENT.png" class="logo">
+            
+        </div>
+
+        <ul class="nav-list">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="../About.html" class="nav-link">About</a></li>
+            <li><a href="services.html" class="nav-link active">Services</a></li>
+            <li><a href="../contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <img src="../images/banner 3.jpg" alt="banner">
+
+        <div class="hero-overlay">
+
+            <div class="hero-content">
+                <h1>Welcome To TechWorld Academy</h1>
+
+                <p>
+                    Learn modern technology skills including web development,
+                    programming, UI/UX design, databases, and more with practical
+                    real-world training.
+                </p>
+
+                <a href="#" class="hero-btn">Explore Courses</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about">
+
+        <h2 class="section-title">About Our Services</h2>
+
+        <p class="about-text">
+            TechWorld Academy provides quality technology education designed
+            to prepare students for careers in web development, software engineering,
+            mobile app development, digital design, and modern computer skills.
+            Our programs focus on practical learning, innovation, and real projects.
+        </p>
+
+    </section>
+
+    <!-- ================= COURSES ================= -->
+
+    <section class="courses">
+
+        <h2 class="section-title">Our Courses</h2>
+
+        <div class="course-container">
+
+            <!-- CARD 1 -->
+
+            <div class="course-card">
+
+                <h3>Beginner Level</h3>
+
+                <ul>
+                    <li>Introduction to Computers</li>
+                    <li>HTML & CSS Fundamentals</li>
+                    <li>Microsoft Office Basics</li>
+                </ul>
+
+                <button>View Course</button>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="course-card">
+
+                <h3>Intermediate Level</h3>
+
+                <ul>
+                    <li>JavaScript Programming</li>
+                    <li>Responsive Web Design</li>
+                    <li>Database Fundamentals</li>
+                </ul>
+
+                <button>View Course</button>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="course-card">
+
+                <h3>Advanced Level</h3>
+
+                <ul>
+                    <li>Full Stack Development</li>
+                    <li>Mobile App Development</li>
+                    <li>UI/UX Design</li>
+                </ul>
+
+                <button>View Course</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= SCHEDULE ================= -->
+
+    <section class="schedule">
+
+        <h2 class="section-title">Weekly Class Schedule</h2>
+
+        <table class="servicesTable">
+
+            <tr>
+                <th>Day</th>
+                <th>Course</th>
+                <th>Time</th>
+                <th>Instructor</th>
+            </tr>
+
+            <tr>
+                <td>Monday</td>
+                <td>HTML & CSS</td>
+                <td>10:00 AM - 12:00 PM</td>
+                <td>Mr. John Smith</td>
+            </tr>
+
+            <tr>
+                <td>Wednesday</td>
+                <td>JavaScript Basics</td>
+                <td>12:00 PM - 2:00 PM</td>
+                <td>Mrs. Jane Doe</td>
+            </tr>
+
+            <tr>
+                <td>Friday</td>
+                <td>Database Fundamentals</td>
+                <td>2:00 PM - 4:00 PM</td>
+                <td>Mr. David Lee</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        © 2026 TechWorld Academy. All Rights Reserved.
+    </footer>
+
+    <script src="../JS/Main.js"></script>
+
+</body>
+
+</html>

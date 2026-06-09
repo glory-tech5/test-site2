@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us</title>
+
+<style>
+
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+    background:#f4f6f9;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: #0a1f44;
+    color: white;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+/* BIG LOGO */
+.logo {
+    width: 121px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.logo-text {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #00d9ff;
+}
+
+/* ===== HERO IMAGE ===== */
+.hero img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+/* ===== PAGE TITLE ===== */
+.page-title{
+    text-align:center;
+    padding:30px 20px;
+}
+
+.page-title h1{
+    font-size:40px;
+    color:#0a1f44;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-section{
+    display:flex;
+    gap:20px;
+    padding:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+/* ===== CARD DESIGN ===== */
+.address,
+.address-location,
+.form{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    flex:1;
+    min-width:300px;
+    max-width:500px;
+}
+
+.address h2{
+    color:#0a1f44;
+    margin-bottom:15px;
+}
+
+/* ===== FORM ===== */
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    font-weight:bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.form-group textarea{
+    height:120px;
+}
+
+/* ===== BUTTONS ===== */
+.buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.buttons input,
+.buttons button{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#0a1f44;
+    color:white;
+    cursor:pointer;
+}
+
+/* ===== ERROR STYLE (NEW) ===== */
+.error{
+    color:red;
+    font-size:14px;
+    margin-top:5px;
+    display:block;
+}
+
+/* ===== MAP ===== */
+.map-container{
+    width:100%;
+    padding:20px;
+}
+
+.map-container iframe{
+    width:100%;
+    height:450px;
+    border-radius:15px;
+}
+
+/* ===== FOOTER ===== */
+.footer{
+    background:#0a1f44;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo-box">
+        <img src="../images/TRANSPARENT.png" class="logo">
+        <span class="logo-text">TechWorld</span>
+    </div>
+
+    <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="About.html" class="nav-link">About</a></li>
+        <li><a href="Services/services.html" class="nav-link">Services</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <img src="/images/banner 2.jpg">
+</div>
+
+<!-- TITLE -->
+<div class="page-title">
+    <h1>Contact Us</h1>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+
+    <!-- ADDRESS -->
+    <div class="address">
+        <h2>Contact Information</h2>
+        <address>
+            Bright Future Institute <br><br>
+            45 Innovation Avenue <br>
+            Tech City, TC 00234 <br><br>
+            Email: tekangglory@gmail.com <br>
+            Phone: +237 681 399 796
+        </address>
+    </div>
+
+    <!-- FORM (UPDATED ONLY HERE) -->
+    <div class="form">
+
+        <p>If you would like to enroll, please fill out the form below:</p>
+
+        <form id="contact-form">
+
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" name="name">
+            </div>
+
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label>Course Interested In:</label>
+                <select name="course">
+                    <option value="">Select Course</option>
+                    <option>Web Development</option>
+                    <option>Graphic Design</option>
+                    <option>Cyber Security</option>
+                    <option>Data Analysis</option>
+                    <option>Networking</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <select name="gender">
+                    <option value="">Select Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Marital Status:</label>
+                <select name="status">
+                    <option value="">Select Status</option>
+                    <option>Single</option>
+                    <option>Married</option>
+                    <option>Others</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Message:</label>
+                <textarea name="message"></textarea>
+            </div>
+
+            <div class="form-group buttons">
+                <input type="reset" value="Reset">
+                <button type="submit">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+</section>
+
+<!-- MAP -->
+<div class="map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15873.295628232554!2d10.131760873141054!3d5.9500283362745074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1"></iframe>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 TechWorld Academy</p>
+</footer>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Validation -->
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+    $("#contact-form").validate({
+
+        rules:{
+            name:{ required:true, minlength:3 },
+            email:{ required:true, email:true },
+            course:{ required:true },
+            gender:{ required:true },
+            status:{ required:true },
+            message:{ required:true, minlength:10 }
+        },
+
+        messages:{
+            name:{ required:"Enter your name", minlength:"Min 3 characters" },
+            email:{ required:"Enter email", email:"Invalid email" },
+            course:{ required:"Select course" },
+            gender:{ required:"Select gender" },
+            status:{ required:"Select status" },
+            message:{ required:"Enter message", minlength:"Min 10 characters" }
+        }
+
+    });
+
+});
+</script>
+
+</body>
+</html>

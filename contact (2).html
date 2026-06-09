@@ -1,0 +1,741 @@
+# Professional DreamTech Contact Page (Bootstrap 5)
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>DreamTech | Contact Us</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f8f9fc;
+    color:#333;
+    padding-top:120px;
+}
+
+/* ================= TOP BAR ================= */
+
+.top-bar{
+    background:#12003a;
+    color:white;
+    font-size:14px;
+    padding:10px 0;
+    z-index:1050;
+}
+
+.top-bar i{
+    color:#ff4da6;
+    margin-right:6px;
+}
+
+.social-icons a{
+    color:white;
+    margin-left:15px;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    color:#ff4da6;
+}
+
+/* ================= NAVBAR ================= */
+
+.custom-navbar{
+    background:rgba(20, 0, 70, 0.95);
+    backdrop-filter:blur(10px);
+    box-shadow:0 4px 20px rgba(0,0,0,0.2);
+    top:42px;
+}
+
+.logo{
+    height:80px;
+}
+
+.navbar-nav .nav-link{
+    color:white !important;
+    font-weight:600;
+    margin:0 12px;
+    position:relative;
+    transition:0.3s;
+}
+
+.navbar-nav .nav-link::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#ff4da6;
+    transition:0.3s;
+}
+
+.navbar-nav .nav-link:hover::after{
+    width:100%;
+}
+
+.navbar-nav .nav-link:hover{
+    color:#ff4da6 !important;
+}
+
+.navbar-nav .active{
+    color:#ffc107 !important;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero-section{
+    background:linear-gradient(rgba(12,0,40,0.75), rgba(12,0,40,0.75)),
+    url('../images/contact.jpg');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    padding:120px 20px;
+    text-align:center;
+}
+
+.hero-section h1{
+    font-size:65px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero-section p{
+    font-size:18px;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* ================= CONTACT SECTION ================= */
+
+.contact-section{
+    margin-top:-70px;
+    position:relative;
+    z-index:10;
+}
+
+.contact-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,0.1);
+}
+
+.contact-left{
+    padding:50px;
+}
+
+.contact-left h2{
+    font-weight:700;
+    color:#140046;
+    margin-bottom:10px;
+}
+
+.contact-left p{
+    color:#666;
+    margin-bottom:30px;
+}
+
+.form-control{
+    border-radius:12px;
+    padding:14px;
+    border:1px solid #ddd;
+    box-shadow:none !important;
+}
+
+.form-control:focus{
+    border-color:#6f42c1;
+}
+
+.btn-send{
+    background:linear-gradient(to right,#6f42c1,#ff4da6);
+    border:none;
+    padding:14px 35px;
+    border-radius:12px;
+    color:white;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn-send:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(111,66,193,0.3);
+}
+
+/* ================= RIGHT SIDE ================= */
+
+.contact-right{
+    background:linear-gradient(to bottom right,#1a0054,#3d00b3);
+    color:white;
+    padding:50px;
+    height:100%;
+}
+
+.contact-right h2{
+    font-weight:700;
+    margin-bottom:30px;
+}
+
+.info-box{
+    display:flex;
+    align-items:flex-start;
+    margin-bottom:30px;
+}
+
+.info-icon{
+    width:55px;
+    height:55px;
+    background:rgba(255,255,255,0.15);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:18px;
+    font-size:22px;
+}
+
+.info-text h5{
+    font-weight:600;
+    margin-bottom:5px;
+}
+
+.info-text p{
+    margin:0;
+    opacity:0.9;
+}
+
+/* ================= MAP ================= */
+
+.map-section{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:45px;
+    font-weight:700;
+    color:#140046;
+}
+
+.section-title p{
+    color:#666;
+}
+
+.map-box{
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 10px 35px rgba(0,0,0,0.12);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#0f0f1a;
+    color:white;
+    padding-top:80px;
+}
+
+.footer-logo{
+    width:140px;
+}
+
+.footer-title{
+    font-weight:600;
+    margin-bottom:25px;
+    position:relative;
+}
+
+.footer-title::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    width:50px;
+    height:3px;
+    background:#ff4da6;
+}
+
+.footer-links a{
+    color:#ccc;
+    text-decoration:none;
+    display:block;
+    margin-bottom:12px;
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:#ff4da6;
+    padding-left:5px;
+}
+
+.footer-social a{
+    width:42px;
+    height:42px;
+    background:#1f1f2e;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    color:white;
+    margin-right:10px;
+    transition:0.3s;
+    text-decoration:none;
+}
+
+.footer-social a:hover{
+    background:#ff4da6;
+    transform:translateY(-4px);
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.1);
+    margin-top:50px;
+    padding:20px 0;
+    text-align:center;
+    color:#aaa;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+    body{
+        padding-top:150px;
+    }
+
+    .hero-section h1{
+        font-size:45px;
+    }
+
+    .contact-left,
+    .contact-right{
+        padding:35px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .top-bar .container{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+    .hero-section{
+        padding:90px 20px;
+    }
+
+    .hero-section h1{
+        font-size:38px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= TOP BAR ================= -->
+
+<div class="top-bar fixed-top">
+
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+
+        <div class="d-flex flex-wrap gap-4">
+
+            <span>
+                <i class="bi bi-telephone"></i>
+                +237 681399796
+            </span>
+
+            <span>
+                <i class="bi bi-envelope"></i>
+                tekangglory@gmail.com
+            </span>
+
+            <span>
+                <i class="bi bi-geo-alt"></i>
+                T-Junction Bamenda
+            </span>
+
+        </div>
+
+        <div class="social-icons">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            <img src="../images/TRANSPARENT.png" alt="Logo" class="logo">
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+ <div class="collapse navbar-collapse justify-content-end" id="nav">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">HOME</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">ABOUT</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active text-warning" href="services.html">SERVICES</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">CONTACT</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <h1>Contact DreamTech</h1>
+
+        <p>
+            We help businesses grow through web development,
+            cybersecurity, branding, networking, and modern IT solutions.
+            Contact us today and let's build something amazing together.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+
+<section class="contact-section">
+
+    <div class="container">
+
+        <div class="contact-card">
+
+            <div class="row g-0">
+
+                <!-- LEFT -->
+
+                <div class="col-lg-7">
+
+                    <div class="contact-left">
+
+                        <h2>Send Us A Message</h2>
+
+                        <p>
+                            Fill out the form below and our team will respond shortly.
+                        </p>
+
+                        <form class="row g-4">
+
+                            <div class="col-md-6">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="First Name">
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="Last Name">
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="email"
+                                       class="form-control"
+                                       placeholder="Email Address">
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="Phone Number">
+                            </div>
+
+                            <div class="col-12">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="Subject">
+                            </div>
+
+                            <div class="col-12">
+                                <textarea class="form-control"
+                                          rows="6"
+                                          placeholder="Write your message here..."></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <button type="submit" class="btn-send">
+                                    Send Message
+                                </button>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT -->
+
+                <div class="col-lg-5">
+
+                    <div class="contact-right">
+
+                        <h2>Contact Information</h2>
+
+                        <div class="info-box">
+
+                            <div class="info-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+
+                            <div class="info-text">
+                                <h5>Office Address</h5>
+                                <p>T-Junction Bamenda, Cameroon</p>
+                            </div>
+
+                        </div>
+
+                        <div class="info-box">
+
+                            <div class="info-icon">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+
+                            <div class="info-text">
+                                <h5>Email Address</h5>
+                                <p>tekangglory@gmail.com</p>
+                            </div>
+
+                        </div>
+
+                        <div class="info-box">
+
+                            <div class="info-icon">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+
+                            <div class="info-text">
+                                <h5>Phone Number</h5>
+                                <p>+237 681399796</p>
+                            </div>
+
+                        </div>
+
+                        <div class="info-box">
+
+                            <div class="info-icon">
+                                <i class="bi bi-globe"></i>
+                            </div>
+
+                            <div class="info-text">
+                                <h5>Website</h5>
+                                <p>www.dreamtech.com</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= MAP SECTION ================= -->
+
+<section class="map-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Find Us On Map</h2>
+
+            <p>
+                Visit our office or contact us online anytime.
+            </p>
+
+        </div>
+
+        <div class="map-box">
+
+            <div class="ratio ratio-16x9">
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15873.295628232554!2d10.131760873141054!3d5.9500283362745074!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4f13.1!3m3!1m2!1s0x105f166a5659321b%3A0x1cd5e82fe62d9670!2sMTN%20MOBILE%20MONEY%20POS%20(NKEMTA%20ZELIO_ND)!5e0!3m2!1sen!2scm!4v1774318328091!5m2!1sen!2scm"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <!-- ABOUT -->
+
+            <div class="col-lg-4">
+
+                <img src="../images/TRANSPARENT.png"
+                     alt="Logo"
+                     class="footer-logo mb-4">
+
+                <p>
+                    DreamTech delivers modern digital solutions including
+                    website development, cybersecurity, branding,
+                    networking, and IT consulting services.
+                </p>
+
+                <div class="footer-social mt-4">
+
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+
+                </div>
+
+            </div>
+
+            <!-- LINKS -->
+
+            <div class="col-lg-4">
+
+                <h5 class="footer-title">Quick Links</h5>
+
+                <div class="footer-links">
+                    <a href="#">Home</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Services</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Contact Us</a>
+                </div>
+
+            </div>
+
+            <!-- CONTACT -->
+
+            <div class="col-lg-4">
+
+                <h5 class="footer-title">Contact Info</h5>
+
+                <p>
+                    <i class="bi bi-geo-alt-fill me-2 text-warning"></i>
+                    Bamenda, Cameroon
+                </p>
+
+                <p>
+                    <i class="bi bi-envelope-fill me-2 text-warning"></i>
+                    tekangglory@gmail.com
+                </p>
+
+                <p>
+                    <i class="bi bi-telephone-fill me-2 text-warning"></i>
+                    +237 681399796
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+
+        <div class="footer-bottom">
+            © 2026 DreamTech. All Rights Reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+```
